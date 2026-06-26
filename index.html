@@ -1,0 +1,77 @@
+<button onclick="playGame()">Play Now</button>
+<button onclick="window.location.href='game.html'">
+    Play Now
+</button>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fruit Match Game</title>
+
+<style>
+body{
+background:#1b1b2f;
+color:white;
+font-family:Arial;
+text-align:center;
+}
+
+h1{
+margin-top:20px;
+}
+
+#board{
+width:480px;
+margin:30px auto;
+display:grid;
+grid-template-columns:repeat(8,60px);
+gap:5px;
+}
+
+.cell{
+width:60px;
+height:60px;
+border-radius:10px;
+cursor:pointer;
+font-size:30px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#333;
+transition:.3s;
+}
+
+.cell:hover{
+transform:scale(1.1);
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🍓 Fruit Match Game</h1>
+
+<div id="board"></div>
+
+<script>
+
+const fruits=["🍎","🍌","🍇","🍓","🥝","🍒"];
+
+const board=document.getElementById("board");
+
+for(let i=0;i<64;i++){
+
+let cell=document.createElement("div");
+
+cell.className="cell";
+
+cell.innerHTML=fruits[Math.floor(Math.random()*fruits.length)];
+
+board.appendChild(cell);
+
+}
+
+</script>
+
+</body>
+</html>
